@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-![my website](https://antongli.github.io/)
+<a href="https://antongli.github.io/">my page</a>
 
 
 
