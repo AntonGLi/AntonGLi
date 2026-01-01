@@ -1,13 +1,36 @@
-<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="400" height="400" viewBox="-200 -200 200 200" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .point-3d { fill: #0366d6; stroke: white; stroke-width: 1; r: 4; }
-    @keyframes fade { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+    @keyframes spin {
+      0% { transform: rotateX(0deg) rotateY(0deg); }
+      100% { transform: rotateX(360deg) rotateY(360deg); }
+    }
+    
+    .cube {
+      transform-style: preserve-3d;
+      transform-origin: 100px 100px;
+      animation: spin 10s infinite linear;
+    }
+    
+    .point {
+      fill: #0366d6;
+      stroke: white;
+      stroke-width: 1;
+      r: 4;
+    }
   </style>
-  <g transform="translate(200, 200)">
-    <circle class="point-3d">
-      <animate attributeName="cx" values="-42.86;-49.75;-54.69;-54.84;-49.93;-42.0;-34.1;-29.11;-29.08;-34.75;-44.97;-56.12;-62.18;-56.81;-37.65;-9.48;18.41;38.13;46.42;44.04;33.77;18.96;2.78;-12.21;-24.4;-33.33;-39.47;-43.56;-45.87;-45.77" dur="6s" repeatCount="indefinite" calcMode="discrete"/>
-      <animate attributeName="cy" values="-42.86;-39.87;-37.63;-34.99;-30.04;-21.4;-8.87;6.45;22.22;35.06;40.78;35.33;16.81;-11.59;-40.74;-59.86;-63.34;-52.9;-34.39;-13.76;4.81;19.11;28.51;33.43;34.77;33.33;29.27;22.09;11.13;-3.69" dur="6s" repeatCount="indefinite" calcMode="discrete"/>
-      <animate attributeName="opacity" values="1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.95;0.91;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0" dur="6s" repeatCount="indefinite"/>
-    </circle>
+  
+  <g class="cube">
+    <!-- Куб 8 точек (2x2x2) -->
+    <!-- Передняя грань -->
+    <circle class="point" cx="70" cy="70" data-z="70"/>
+    <circle class="point" cx="130" cy="70" data-z="70"/>
+    <circle class="point" cx="70" cy="130" data-z="70"/>
+    <circle class="point" cx="130" cy="130" data-z="70"/>
+    
+    <!-- Задняя грань (изначально скрыта) -->
+    <circle class="point" cx="70" cy="70" data-z="130"/>
+    <circle class="point" cx="130" cy="70" data-z="130"/>
+    <circle class="point" cx="70" cy="130" data-z="130"/>
+    <circle class="point" cx="130" cy="130" data-z="130"/>
   </g>
 </svg>
