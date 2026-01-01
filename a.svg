@@ -1,14 +1,11 @@
-<svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
+<svg width="400" height="100">
   <style>
-    @keyframes move {
-      0%   { transform: translateX(0); }
-      50%  { transform: translateX(350px); }
-      100% { transform: translateX(0); }
+    @keyframes complex {
+      0% { transform: translateX(0) rotate(0deg); opacity: 1; }
+      50% { transform: translateX(350px) rotate(180deg); opacity: 0.5; }
+      100% { transform: translateX(0) rotate(360deg); opacity: 1; }
     }
-    .animated-rect {
-      animation: move 3s infinite;
-      fill: #2ea44f;
-    }
+    .box { animation: complex 4s infinite; }
   </style>
-  <rect class="animated-rect" width="50" height="50" />
+  <rect class="box" width="50" height="50" fill="blue"/>
 </svg>
