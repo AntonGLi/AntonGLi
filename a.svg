@@ -1,36 +1,47 @@
-<svg width="400" height="400" viewBox="-200 -200 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <style>
-    @keyframes spin {
-      0% { transform: rotateX(0deg) rotateY(0deg); }
-      100% { transform: rotateX(360deg) rotateY(360deg); }
+    @keyframes rotate3d {
+      0% { transform: rotateZ(0deg) rotateX(20deg) rotateY(0deg); }
+      25% { transform: rotateZ(90deg) rotateX(20deg) rotateY(90deg); }
+      50% { transform: rotateZ(180deg) rotateX(20deg) rotateY(180deg); }
+      75% { transform: rotateZ(270deg) rotateX(20deg) rotateY(270deg); }
+      100% { transform: rotateZ(360deg) rotateX(20deg) rotateY(360deg); }
     }
     
-    .cube {
-      transform-style: preserve-3d;
-      transform-origin: 100px 100px;
-      animation: spin 10s infinite linear;
+    .tetrahedron {
+      transform-origin: 150px 150px;
+      animation: rotate3d 8s infinite linear;
     }
     
-    .point {
-      fill: #0366d6;
-      stroke: white;
-      stroke-width: 1;
-      r: 4;
+    .vertex {
+      fill: #2ea44f;
+      stroke: #1e7c34;
+      stroke-width: 2;
+      r: 6;
+      filter: drop-shadow(0 0 2px rgba(46, 164, 79, 0.5));
+    }
+    
+    .edge {
+      stroke: rgba(46, 164, 79, 0.3);
+      stroke-width: 1.5;
+      fill: none;
     }
   </style>
   
-  <g class="cube">
-    <!-- Куб 8 точек (2x2x2) -->
-    <!-- Передняя грань -->
-    <circle class="point" cx="70" cy="70" data-z="70"/>
-    <circle class="point" cx="130" cy="70" data-z="70"/>
-    <circle class="point" cx="70" cy="130" data-z="70"/>
-    <circle class="point" cx="130" cy="130" data-z="70"/>
+  <g class="tetrahedron">
+    <!-- Тетраэдр (4 точки) -->
+    <!-- Проекция 3D координат в 2D с изометрией -->
+    <circle class="vertex" cx="150" cy="100" data-label="A"/>
+    <circle class="vertex" cx="100" cy="200" data-label="B"/>
+    <circle class="vertex" cx="200" cy="200" data-label="C"/>
+    <circle class="vertex" cx="150" cy="150" data-label="D"/>
     
-    <!-- Задняя грань (изначально скрыта) -->
-    <circle class="point" cx="70" cy="70" data-z="130"/>
-    <circle class="point" cx="130" cy="70" data-z="130"/>
-    <circle class="point" cx="70" cy="130" data-z="130"/>
-    <circle class="point" cx="130" cy="130" data-z="130"/>
+    <!-- Рёбра -->
+    <line class="edge" x1="150" y1="100" x2="100" y2="200"/>
+    <line class="edge" x1="150" y1="100" x2="200" y2="200"/>
+    <line class="edge" x1="150" y1="100" x2="150" y2="150"/>
+    <line class="edge" x1="100" y1="200" x2="200" y2="200"/>
+    <line class="edge" x1="100" y1="200" x2="150" y2="150"/>
+    <line class="edge" x1="200" y1="200" x2="150" y2="150"/>
   </g>
 </svg>
