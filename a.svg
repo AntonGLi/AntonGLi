@@ -1,0 +1,73 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes rot1 {
+      0% { transform: rotateX(0deg) rotateY(0deg); }
+      100% { transform: rotateX(360deg) rotateY(720deg); }
+    }
+
+    @keyframes rot2 {
+      0% { transform: rotateX(0deg) rotateY(60deg); }
+      100% { transform: rotateX(360deg) rotateY(780deg); }
+    }
+
+    @keyframes rot3 {
+      0% { transform: rotateX(0deg) rotateY(120deg); }
+      100% { transform: rotateX(360deg) rotateY(840deg); }
+    }
+    
+    .layer-3 {
+      transform-origin: 150px 150px;
+      opacity: 1;
+      animation: rot3 10s infinite linear;
+    }
+
+    .layer-2 {
+      transform-origin: 150px 150px;
+      opacity: 1;
+      animation: rot2 10s infinite linear;
+    }
+
+    .layer-1 {
+      transform-origin: 150px 150px;
+      opacity: 1;
+      animation: rot1 10s infinite linear;
+    }
+    
+    .edge {
+      stroke: #2ea44f;
+      stroke-width: 2;
+    }
+  </style>
+  
+  <g class="layer-1">
+
+    <line class="edge" x1="150" y1="100" x2="100" y2="200"/>
+    <line class="edge" x1="150" y1="100" x2="200" y2="200"/>
+    <line class="edge" x1="150" y1="100" x2="150" y2="150"/>
+    <line class="edge" x1="100" y1="200" x2="200" y2="200"/>
+    <line class="edge" x1="100" y1="200" x2="150" y2="150"/>
+    <line class="edge" x1="200" y1="200" x2="150" y2="150"/>
+  </g>
+  
+  
+  <g class="layer-2">
+
+    <line class="edge" x1="150" y1="100" x2="100" y2="200"/>
+    <line class="edge" x1="150" y1="100" x2="200" y2="200"/>
+    <line class="edge" x1="150" y1="100" x2="150" y2="150"/>
+    <line class="edge" x1="100" y1="200" x2="200" y2="200"/>
+    <line class="edge" x1="100" y1="200" x2="150" y2="150"/>
+    <line class="edge" x1="200" y1="200" x2="150" y2="150"/>
+  </g>
+  
+  <g class="layer-3">
+
+    <line class="edge" x1="150" y1="100" x2="100" y2="200"/>
+    <line class="edge" x1="150" y1="100" x2="200" y2="200"/>
+    <line class="edge" x1="150" y1="100" x2="150" y2="150"/>
+    <line class="edge" x1="100" y1="200" x2="200" y2="200"/>
+    <line class="edge" x1="100" y1="200" x2="150" y2="150"/>
+    <line class="edge" x1="200" y1="200" x2="150" y2="150"/>
+  </g>
+  
+</svg>
